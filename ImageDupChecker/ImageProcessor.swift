@@ -76,9 +76,11 @@ class ImageProcessor: ObservableObject {
 
                     if let image = NSImage(contentsOf: imageURL) {
                         let thumbnail = self.createThumbnail(from: image)
+
                         let imageItem = ImageItem(
                             url: imageURL,
-                            thumbnail: thumbnail
+                            thumbnail: thumbnail,
+                            size: image.size
                         )
 
                         DispatchQueue.main.async {

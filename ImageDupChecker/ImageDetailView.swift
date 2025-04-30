@@ -21,7 +21,7 @@ struct ImageDetailView: View {
             
             VStack(alignment: .leading, spacing: 8) {
                 Text("ファイル名: \(imageItem.fileName)")
-                Text("サイズ: \(imageItem.fileSize)")
+                Text("サイズ: \(imageItem.fileSize) サイズ:\(sizeToString(size:imageItem.size))")
                 Text("作成日時: \(imageItem.creationDate)")
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -36,4 +36,8 @@ struct ImageDetailView: View {
         .cornerRadius(8)
         .shadow(radius: 2)
     }
+}
+
+func sizeToString(size: NSSize) -> String {
+    return String(format: "幅: %.0f, 高さ: %.0f", size.width, size.height)
 }

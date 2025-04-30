@@ -16,6 +16,7 @@ struct ImageItem: Identifiable, Hashable {
     let id = UUID()
     let url: URL
     let thumbnail: NSImage
+    let size : NSSize
     
     var fileName: String {
         return url.lastPathComponent
